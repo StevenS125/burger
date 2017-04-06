@@ -17,3 +17,19 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
+#firstone {
+	width: 400px;
+	float: left;
+	padding: 5px;
+}
+
+#secondOne {
+	width: 400px;
+	float: right;
+	padding: 5px;
+}
+
+#formDiv {
+	float: left;
+}
