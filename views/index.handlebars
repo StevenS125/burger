@@ -6,17 +6,18 @@
   {{#each burgers}}
     {{#unless this.devoured}}
       <li>
-        {{this.name}}
+        {{this.burger_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
           <button type="submit">Eat the Burger!</button>
         </form>
 
-        <form action="/{{this.id}}?_method=DELETE" method="POST">
-          <input type="hidden" name="id" value="{{this.id}}">
-          <button type="submit">Delete the Burger!</button>
-        </form>
+         <form action="/{{this.id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">delete the burger!</button>
+         </form>
+
 
         {{> burgers/delete-burger}}
       </li>
@@ -38,10 +39,11 @@
           <button type="submit">Send it Back!</button>
         </form>
 
-     <form action="/{{this.id}}?_method=DELETE" method="POST">
-          <input type="hidden" name="devoured" value="false">
-          <button type="submit">Delete Burger!</button>
-        </form>
+            <form action="/{{this.id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">delete the burger!</button>
+         </form>
+
 
         {{> burgers/delete-burger}}
 
@@ -55,14 +57,15 @@
 
   <div class="form-group">
     <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="ca" name="burger_name">
   </div>
 
   <div class="form-group">
     <label for="slee">devoured?</label><br>
     <input type="radio" name="devoured" value="1" checked> devoured!<br>
-    <input type="radio" name="devoured" value="0"> Awake
+    <input type="radio" name="devoured" value="0"> Send it back
   </div>
 
   <button type="submit">Add Burger</button>
 </form>
+
